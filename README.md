@@ -12,6 +12,12 @@ Or
 pip install "pulldown-py @ git+https://github.com/tuna2134/pulldown-py"
 ```
 
+## Performance
+
+| pulldown-py | misaka |
+| :--:        | :--:   |
+| 0.026       | 0.064  |
+
 ## Example
 
 ```py
