@@ -26,8 +26,9 @@ pub fn parse_ext(text: &str, tables: Option<bool>) {
     if tables.unwrap_or(false) {
         options.insert(Options::ENABLE_TABLES);
     }
+    let parser = Parser::new_ext(text, options);
+
     let mut output = String::new();
-    Parser::new_ext(text, options);
     html::push_html(&mut output, parser);
     Ok(output)
 }
