@@ -7,7 +7,6 @@ use pulldown_cmark::{html, Parser};
 /// --
 ///
 /// This function is parse markdown to html.
-
 #[pyfunction]
 pub fn parse(text: &str) -> PyResult<String> {
     let parser: Parser = Parser::new(text);
