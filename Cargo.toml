@@ -1,12 +1,12 @@
 [package]
-name = "pulldown-py"
+name = "mizu"
 description = "Markdown library"
 version = "0.1.2"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
-name = "pulldown_py"
+name = "mizu"
 crate-type = ["cdylib"]
 
 [dependencies]
