@@ -15,7 +15,7 @@
 https://github.com
 
 - [ ] test1
-- [ ] test2
+- [x] test2
 
 - test
 - test2
