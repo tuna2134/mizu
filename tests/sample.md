@@ -19,3 +19,10 @@ https://github.com
 
 - test
 - test2
+
+```py
+import discord
+
+
+client = discord.Client(intents=discord.Intents.all())
+```
