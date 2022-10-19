@@ -1,6 +1,6 @@
 from time import time
 
-from pulldown_py import parse
+from pulldown_py import parser
 
 
 with open("../README.md", "r") as f:
@@ -11,7 +11,7 @@ times = 0
 
 for i in range(10000):
     first = time()
-    parse(content)
+    parser(content)
     times += time() - first
 
 print(times)
