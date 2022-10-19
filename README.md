@@ -1,6 +1,6 @@
 # mizu
 
-This library written by rust and used [pulldown-cmark](https://github.com/raphlinus/pulldown-cmark).
+Mizu written by rust and used [pulldown-cmark](https://github.com/raphlinus/pulldown-cmark).
 
 ## Installation
 
