@@ -3,7 +3,7 @@ from time import time
 from pulldown_py import parser
 
 
-with open("../README.md", "r") as f:
+with open("README.md", "r") as f:
     content = f.read()
     
 
