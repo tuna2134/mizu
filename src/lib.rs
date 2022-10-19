@@ -5,5 +5,6 @@ mod parser;
 #[pymodule]
 fn mizu(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(parser::parse, m)?)?;
+    m.add_function(wrap_pyfunction!(parser::parse_ext, m)?)?;
     Ok(())
 }
