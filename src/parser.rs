@@ -21,7 +21,7 @@ pub fn parse(text: &str) -> PyResult<String> {
 
 
 #[pyfunction]
-pub fn parse_ext(text: &str, tables: Option<bool>) {
+pub fn parse_ext(text: &str, tables: Option<bool>) -> PyResult<String> {
     let mut options = Options::empty();
     if tables.unwrap_or(false) {
         options.insert(Options::ENABLE_TABLES);
