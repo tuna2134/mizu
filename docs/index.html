@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>mizu API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="mizu …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,11 +22,31 @@
 <h1 class="title">Package <code>mizu</code></h1>
 </header>
 <section id="section-intro">
+<h1 id="mizu">mizu</h1>
+<p>Mizu written by rust and used <a href="https://github.com/raphlinus/pulldown-cmark">pulldown-cmark</a>.</p>
+<h2 id="installation">Installation</h2>
+<pre><code class="language-sh">pip install mizu
+</code></pre>
+<p>Or</p>
+<pre><code class="language-sh">pip install &quot;mizu @ git+https://github.com/tuna2134/mizu&quot;
+</code></pre>
+<h2 id="performance">Performance</h2>
+<p>These performance test codes are in tests.</p>
+<p><code>0.026ms</code></p>
+<h2 id="example">Example</h2>
+<pre><code class="language-py">from mizu import parse
+
+
+parse(&quot;# Hello tuna2134&quot;)
+</code></pre>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">from .mizu import parse
+<pre><code class="python">&#34;&#34;&#34;
+.. include:: ../README.md
+&#34;&#34;&#34;
+from .mizu import parse
 
 
 __all__ = (&#34;parse&#34;,)</code></pre>
@@ -70,7 +90,14 @@ __all__ = (&#34;parse&#34;,)</code></pre>
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#mizu">mizu</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#performance">Performance</a></li>
+<li><a href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <ul id="index">
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
