@@ -1,4 +1,4 @@
-def parser(text: str) -> str:
+def parse(text: str) -> str:
     """Parse markdown to html
     
     Args:
