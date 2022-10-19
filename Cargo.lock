@@ -67,6 +67,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "mizu"
+version = "0.1.2"
+dependencies = [
+ "pulldown-cmark",
+ "pyo3",
+]
+
+[[package]]
 name = "once_cell"
 version = "1.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -114,14 +122,6 @@ dependencies = [
  "getopts",
  "memchr",
  "unicase",
-]
-
-[[package]]
-name = "pulldown-py"
-version = "0.1.1"
-dependencies = [
- "pulldown-cmark",
- "pyo3",
 ]
 
 [[package]]
