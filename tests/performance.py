@@ -11,7 +11,7 @@ times = 0
 
 for i in range(10000):
     first = time()
-    parser(content)
+    parse(content)
     times += time() - first
 
 print(times)
