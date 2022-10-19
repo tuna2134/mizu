@@ -1,6 +1,6 @@
 from time import time
 
-from pulldown_py import parser
+from pulldown_py import parse
 
 
 with open("../README.md", "r") as f:
