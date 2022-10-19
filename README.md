@@ -14,6 +14,8 @@ pip install "pulldown-py @ git+https://github.com/tuna2134/pulldown-py"
 
 ## Performance
 
+These performance test codes are in tests.
+
 | pulldown-py | misaka |
 | :--:        | :--:   |
 | 0.026       | 0.064  |
