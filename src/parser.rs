@@ -21,10 +21,29 @@ pub fn parse(text: &str) -> PyResult<String> {
 
 
 #[pyfunction]
-pub fn parse_ext(text: &str, tables: Option<bool>) -> PyResult<String> {
+pub fn parse_ext(
+    text: &str, tables: Option<bool>, footnotes: Option<bool>,
+    strikethrough: Option<bool>, tasklists: Option<bool>,
+    smart_punctuation: Option<bool>, heading_attribute: Option<bool>
+) -> PyResult<String> {
     let mut options = Options::empty();
     if tables.unwrap_or(false) {
         options.insert(Options::ENABLE_TABLES);
+    }
+    if footnotes.unwrap_or(false) {
+        options.insert(Options::ENABLE_FOOTNOTES);
+    }
+    if strikethrough.unwrap_or(false) {
+        options.insert(Options::ENABLE_STRIKETHROUGH);
+    }
+    if tasklists.unwrap_or(false) {
+        options.insert(Options::ENABLE_TASKLISTS);
+    }
+    if smart_punctuation.unwrap_or(false) {
+        options.insert(Options::ENABLE_SMART_PUNCTUATION);
+    }
+    if heading_attribute.unwrap_or(false) {
+        options.insert(Options::ENABLE_HEADING_ATTRIBUTES);
     }
     let parser = Parser::new_ext(text, options);
 
