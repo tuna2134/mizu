@@ -1,5 +1,7 @@
 # pulldown-py
 
+This library written by rust and used [pulldown-cmark](https://github.com/raphlinus/pulldown-cmark).
+
 ## Installation
 
 ```sh
@@ -16,7 +18,7 @@ pip install "pulldown-py @ git+https://github.com/tuna2134/pulldown-py"
 
 These performance test codes are in tests.
 
-0.026
+`0.026ms`
 
 ## Example
 
