@@ -1,17 +1,17 @@
-# pulldown-py
+# mizu
 
 This library written by rust and used [pulldown-cmark](https://github.com/raphlinus/pulldown-cmark).
 
 ## Installation
 
 ```sh
-pip install pulldown-py
+pip install mizu
 ```
 
 Or
 
 ```sh
-pip install "pulldown-py @ git+https://github.com/tuna2134/pulldown-py"
+pip install "mizu @ git+https://github.com/tuna2134/mizu"
 ```
 
 ## Performance
@@ -23,7 +23,7 @@ These performance test codes are in tests.
 ## Example
 
 ```py
-from pulldown_py import parse
+from mizu import parse
 
 
 parse("# Hello tuna2134")
