@@ -4,7 +4,7 @@ use pulldown_cmark::Parser;
 
 
 #[pyfunction]
-pub fn parser(text: &str) -> PyResult<String> {
+pub fn parse(text: &str) -> PyResult<String> {
     let parser: Parser = Parser::new(text);
     
     let mut output: String = String::new();
