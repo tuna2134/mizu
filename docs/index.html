@@ -26,6 +26,7 @@
 <p><a href="https://pepy.tech/project/mizu"><img alt="Downloads" src="https://pepy.tech/badge/mizu"></a>
 <a href="https://pepy.tech/project/mizu"><img alt="Downloads" src="https://pepy.tech/badge/mizu/month"></a>
 <a href="https://pepy.tech/project/mizu"><img alt="Downloads" src="https://pepy.tech/badge/mizu/week"></a></p>
+<p><a href="https://tuna2134.github.io/mizu">Documentation</a></p>
 <p>Mizu written by rust and used <a href="https://github.com/raphlinus/pulldown-cmark">pulldown-cmark</a>.</p>
 <h2 id="installation">Installation</h2>
 <pre><code class="language-sh">pip install mizu
@@ -35,12 +36,22 @@
 </code></pre>
 <h2 id="performance">Performance</h2>
 <p>These performance test codes are in tests.</p>
-<p><code>0.026ms</code></p>
+<p><code>26ms</code></p>
 <h2 id="example">Example</h2>
+<p>Basic:</p>
 <pre><code class="language-py">from mizu import parse
 
 
 parse(&quot;# Hello tuna2134&quot;)
+</code></pre>
+<p>Extension:</p>
+<pre><code class="language-py">from mizu import parse
+
+
+parse_ext(&quot;&quot;&quot;
+- [ ] test
+- [ ] test2
+&quot;&quot;&quot;)
 </code></pre>
 <details class="source">
 <summary>
