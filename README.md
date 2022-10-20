@@ -1,6 +1,8 @@
 # mizu
 
 [![Downloads](https://pepy.tech/badge/mizu)](https://pepy.tech/project/mizu)
+[![Downloads](https://pepy.tech/badge/mizu/month)](https://pepy.tech/project/mizu)
+[![Downloads](https://pepy.tech/badge/mizu/week)](https://pepy.tech/project/mizu)
 
 Mizu written by rust and used [pulldown-cmark](https://github.com/raphlinus/pulldown-cmark).
 
