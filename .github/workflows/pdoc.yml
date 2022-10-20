@@ -13,3 +13,10 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install depend
+        run: |
+          pip install pdoc3
+          pip install .
