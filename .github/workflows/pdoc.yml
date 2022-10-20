@@ -1,0 +1,11 @@
+name: Document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
