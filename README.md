@@ -1,4 +1,4 @@
-# mizu
+# mizu 💧
 
 [![Version](https://img.shields.io/pypi/v/niconico.py)](https://pypi.org/project/niconico.py/)
 [![Downloads](https://pepy.tech/badge/mizu)](https://pepy.tech/project/mizu)
