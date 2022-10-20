@@ -1,0 +1,20 @@
+body {
+    font-family: "Noto Sans JP";
+}
+
+header {
+    background-color: #03f8fc;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+main {
+    padding-top: 20px;
+    padding-left: 3%;
+}
+
+pre code {
+    border-radius: 10px;
+}
