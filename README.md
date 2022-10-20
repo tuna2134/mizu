@@ -22,7 +22,7 @@ pip install "mizu @ git+https://github.com/tuna2134/mizu"
 
 These performance test codes are in tests.
 
-`0.026ms`
+`26ms`
 
 ## Example
 
