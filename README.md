@@ -41,7 +41,7 @@ parse("# Hello tuna2134")
 Extension:
 
 ```py
-from mizu import parse
+from mizu import parse_ext
 
 
 parse_ext("""
