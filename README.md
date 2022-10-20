@@ -26,9 +26,23 @@ These performance test codes are in tests.
 
 ## Example
 
+basic:
+
 ```py
 from mizu import parse
 
 
 parse("# Hello tuna2134")
+```
+
+extension:
+
+```py
+from mizu import parse
+
+
+parse_ext("""
+- [ ] test
+- [ ] test2
+""")
 ```
