@@ -1,0 +1,32 @@
+name: Document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install depend
+        run: |
+          pip install pdoc3
+          pip install .
+      - name: Build docs
+        run: |
+          pdoc --html -o output mizu
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
