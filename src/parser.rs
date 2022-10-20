@@ -39,7 +39,7 @@ pub fn parse_ext(
     strikethrough: Option<bool>, tasklists: Option<bool>,
     smart_punctuation: Option<bool>, heading_attribute: Option<bool>
 ) -> PyResult<String> {
-    let mut options = Options::empty();
+    let mut options: Options = Options::empty();
     if tables.unwrap_or(false) {
         options.insert(Options::ENABLE_TABLES);
     }
@@ -58,9 +58,9 @@ pub fn parse_ext(
     if heading_attribute.unwrap_or(false) {
         options.insert(Options::ENABLE_HEADING_ATTRIBUTES);
     }
-    let parser = Parser::new_ext(text, options);
+    let parser: Parser = Parser::new_ext(text, options);
 
-    let mut output = String::new();
+    let mut output: String = String::new();
     html::push_html(&mut output, parser);
     Ok(output)
 }
