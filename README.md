@@ -26,7 +26,7 @@ These performance test codes are in tests.
 
 ## Example
 
-basic:
+Basic:
 
 ```py
 from mizu import parse
@@ -35,7 +35,7 @@ from mizu import parse
 parse("# Hello tuna2134")
 ```
 
-extension:
+Extension:
 
 ```py
 from mizu import parse
