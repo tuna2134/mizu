@@ -10,4 +10,7 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
-download-url = "https://github.com/tuna2134/mizu"
+
+[project.urls]
+Documentation = "https://tuna2134.github.io/mizu"
+"Source Code" = "https://github.com/tuna2134/mizu"
