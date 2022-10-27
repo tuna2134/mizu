@@ -70,6 +70,6 @@ jobs:
           command: upload
           args: --skip-existing *
       - name: Release
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
