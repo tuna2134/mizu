@@ -1,6 +1,6 @@
 # mizu 💧
 
-[![Version](https://img.shields.io/pypi/v/niconico.py)](https://pypi.org/project/niconico.py/)
+[![Version](https://img.shields.io/pypi/v/mizu)](https://pypi.org/project/mizu/)
 [![Downloads](https://pepy.tech/badge/mizu)](https://pepy.tech/project/mizu)
 [![Downloads](https://pepy.tech/badge/mizu/month)](https://pepy.tech/project/mizu)
 [![Downloads](https://pepy.tech/badge/mizu/week)](https://pepy.tech/project/mizu)
