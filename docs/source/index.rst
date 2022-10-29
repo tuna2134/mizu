@@ -10,7 +10,7 @@ Welcome to mizu's documentation!
    :maxdepth: 2
    :caption: Contents:
     
-    mizu
+   mizu
 
 
 Indices and tables
