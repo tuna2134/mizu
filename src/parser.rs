@@ -11,6 +11,7 @@ use pulldown_cmark::{html, Options, Parser};
 /// Returns:
 ///     str: Html content.
 #[pyfunction]
+#[args(text)]
 pub fn parse(text: &str) -> PyResult<String> {
     let parser: Parser = Parser::new(text);
     
@@ -34,6 +35,7 @@ pub fn parse(text: &str) -> PyResult<String> {
 /// Returns:
 ///     str: Html content.
 #[pyfunction]
+#[args(text, *, tables, footnotes, strikethrough, tasklists, smart_punctuation, heading_attribute)]
 pub fn parse_ext(
     text: &str, tables: Option<bool>, footnotes: Option<bool>,
     strikethrough: Option<bool>, tasklists: Option<bool>,
