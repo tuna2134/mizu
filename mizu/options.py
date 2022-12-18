@@ -1,3 +1,5 @@
+# Mizu's markdown options
+
 class Options:
     """Options for Markdown parsing.
 

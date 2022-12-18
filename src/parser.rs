@@ -3,8 +3,12 @@ use pyo3::prelude::*;
 use pulldown_cmark::{html, Options, Parser};
 
 
+/// Markdown parser.
+///
+/// Args:
+///     options (Options): Options for parser.
 #[pyclass]
-#[pyo3(text_signature = "(options: Options = Options())")]
+#[pyo3(text_signature = "(options, /)")]
 pub struct Markdown {
     options: Options,
 }
@@ -17,8 +21,12 @@ impl Markdown {
         Markdown { options: options }
     }
 
+    /// Parse markdown text to html.
+    ///
+    /// Args:
+    ///     text (str): Markdown text.
     #[args(text)]
-    #[pyo3(text_signature = "(text: str)")]
+    #[pyo3(text_signature = "(text, /)")]
     fn parse(&self, text: &str) -> PyResult<String> {
         let parser: Parser = Parser::new_ext(text, self.options);
 

@@ -1,6 +1,4 @@
-"""
-.. include:: ../README.md
-"""
+# Mizu's main module.
 
 from .mizu import Markdown
 from .options import Options
