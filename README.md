@@ -34,20 +34,20 @@ These performance test codes are in tests.
 Basic:
 
 ```py
-from mizu import Markdown
+from mizu import Mizu
 
 
-md = Markdown()
+md = Mizu()
 md.parse("# Hello tuna2134")
 ```
 
 Extension:
 
 ```py
-from mizu import Markdown, Options
+from mizu import Mizu, Options
 
 
-md = Markdown(Options(tasklists=True))
+md = Mizu(Options(tasklists=True))
 md.parse("""
 [ ] - hello
 [ ] - hi
