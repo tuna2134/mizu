@@ -2,49 +2,6 @@ use pyo3::prelude::*;
 
 use pulldown_cmark::{html, Options, Parser};
 
-/// This function is parse markdown to html.
-///
-/// Args:
-///     text (str): Markdown content.
-///
-/// Returns:
-///     str: Html content.
-#[pyfunction]
-pub fn parse(text: &str) -> PyResult<String> {
-    let parser: Parser = Parser::new(text);
-
-    let mut output: String = String::new();
-    html::push_html(&mut output, parser);
-    Ok(output)
-}
-
-/// This function is parse markdown to html.
-///
-/// Args:
-///     text (str): Markdown content.
-///     tables (Optional[bool]): Enable tables.
-///     footnotes (Optional[bool]): Enable footnotes.
-///     strikethrough (Optional[bool]): Enable strikethrough.
-///     tasklists (Optional[bool]): Enable tasklists.
-///     smart_punctuation (Optional[bool]): Enable smart_punctuation.
-///     heading_attribute (Optional[bool]): Enable heading_attribute.
-///
-/// Returns:
-///     str: Html content.
-#[pyfunction]
-pub fn parse_ext(
-    text: &str,
-    tables: Option<bool>,
-    footnotes: Option<bool>,
-    strikethrough: Option<bool>,
-    tasklists: Option<bool>,
-    smart_punctuation: Option<bool>,
-    heading_attribute: Option<bool>,
-) -> PyResult<String> {
-    let mut options: Options = Options::empty();
-    if tables.unwrap_or(false) {
-        options.insert(Options::ENABLE_TABLES);
-    }
 
 #[pyclass]
 #[pyo3(text_signature = "(options: Options = Options())")]
