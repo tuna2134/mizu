@@ -3,7 +3,7 @@ from typing import Optional
 from .options import Options
 
 
-class Markdown:
+class Mizu:
     def __init__(self, options: Options = Options()) -> None:
         ...
 

@@ -68,7 +68,7 @@ dependencies = [
 
 [[package]]
 name = "mizu"
-version = "0.2.0-alpha1"
+version = "0.2.0-alpha2"
 dependencies = [
  "pulldown-cmark",
  "pyo3",

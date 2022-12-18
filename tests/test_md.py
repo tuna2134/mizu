@@ -1,6 +1,6 @@
-from mizu import Markdown, Options
+from mizu import Mizu, Options
 
 
 def test_parse():
-    markdown = Markdown()
-    assert markdown.parse("# Hello") == "<h1>Hello</h1>\n"
+    mizu = Mizu()
+    assert mizu.parse("# Hello") == "<h1>Hello</h1>\n"

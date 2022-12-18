@@ -9,16 +9,16 @@ use pulldown_cmark::{html, Options, Parser};
 ///     options (Options): Options for parser.
 #[pyclass]
 #[pyo3(text_signature = "(options, /)")]
-pub struct Markdown {
+pub struct Mizu {
     options: Options,
 }
 
 #[pymethods]
-impl Markdown {
+impl Mizu {
     #[new]
     #[args(options = "Options::empty()")]
     pub fn new(#[pyo3(from_py_with = "get_options")] options: Options) -> Self {
-        Markdown { options: options }
+        Mizu { options: options }
     }
 
     /// Parse markdown text to html.
