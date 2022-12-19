@@ -13,3 +13,6 @@ class Mizu:
 
     def parse(self, text: str) -> str:
         ...
+
+    async def aioparse(self, text: str) -> str:
+        ...
