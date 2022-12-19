@@ -1,24 +1,31 @@
 use pyo3::prelude::*;
 
+use crate::asyncio::*;
 use pulldown_cmark::{html, Options, Parser};
-
 
 /// Markdown parser.
 ///
 /// Args:
 ///     options (Options): Options for parser.
 #[pyclass]
-#[pyo3(text_signature = "(options, /)")]
+#[pyo3(text_signature = "(options, loop/)")]
 pub struct Mizu {
     options: Options,
+    loop_: Option<PyObject>,
 }
 
 #[pymethods]
 impl Mizu {
     #[new]
     #[args(options = "Options::empty()")]
-    pub fn new(#[pyo3(from_py_with = "get_options")] options: Options) -> Self {
-        Mizu { options: options }
+    pub fn new(
+        #[pyo3(from_py_with = "get_options")] options: Options,
+        loop_: Option<PyObject>,
+    ) -> Self {
+        Mizu {
+            options: options,
+            loop_: loop_,
+        }
     }
 
     /// Parse markdown text to html.
@@ -33,6 +40,27 @@ impl Mizu {
         let mut output: String = String::new();
         html::push_html(&mut output, parser);
         Ok(output)
+    }
+
+    fn aioparse(&self, py: Python, text: String) -> PyResult<PyObject> {
+        if self.loop_.is_none() {
+            return Err(pyo3::exceptions::PyValueError::new_err(
+                "Event loop is not set",
+            ));
+        }
+        let future = create_future(py, self.loop_.clone().unwrap())?;
+        let options = self.options.clone();
+        let fut_clone = future.clone_ref(py);
+        let loop_ = self.loop_.clone().unwrap();
+        std::thread::spawn(move || {
+            Python::with_gil(|py| {
+                let parser: Parser = Parser::new_ext(text.as_str(), options);
+                let mut output: String = String::new();
+                html::push_html(&mut output, parser);
+                set_result(py, loop_, fut_clone, output).unwrap();
+            });
+        });
+        Ok(future)
     }
 }
 

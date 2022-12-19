@@ -1,4 +1,5 @@
 use pyo3::prelude::*;
+mod asyncio;
 mod core;
 
 /// Mizu's core
