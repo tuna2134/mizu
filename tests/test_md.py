@@ -1,6 +1,7 @@
 from mizu import Mizu, Options
 
 
+mizu = Mizu()
+
 def test_parse():
-    mizu = Mizu()
     assert mizu.parse("# Hello") == "<h1>Hello</h1>\n"
