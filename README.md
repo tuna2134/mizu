@@ -1,5 +1,7 @@
 # mizu 💧
 
+**Warning:** This library is now developing. Please use stable version.
+
 [![Version](https://img.shields.io/pypi/v/mizu)](https://pypi.org/project/mizu/)
 [![Downloads](https://pepy.tech/badge/mizu)](https://pepy.tech/project/mizu)
 [![Downloads](https://pepy.tech/badge/mizu/month)](https://pepy.tech/project/mizu)
@@ -32,20 +34,22 @@ These performance test codes are in tests.
 Basic:
 
 ```py
-from mizu import parse
+from mizu import Mizu
 
 
-parse("# Hello tuna2134")
+md = Mizu()
+md.parse("# Hello tuna2134")
 ```
 
 Extension:
 
 ```py
-from mizu import parse_ext
+from mizu import Mizu, Options
 
 
-parse_ext("""
-- [ ] test
-- [ ] test2
+md = Mizu(Options(tasklists=True))
+md.parse("""
+[ ] - hello
+[ ] - hi
 """)
 ```

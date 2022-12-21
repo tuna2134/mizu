@@ -2,7 +2,7 @@ name: Build document
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "develop"]
     paths:
       - docs/**
 
