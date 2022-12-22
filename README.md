@@ -1,7 +1,5 @@
 # mizu 💧
 
-**Warning:** This library is now developing. Please use stable version.
-
 [![Version](https://img.shields.io/pypi/v/mizu)](https://pypi.org/project/mizu/)
 [![Downloads](https://pepy.tech/badge/mizu)](https://pepy.tech/project/mizu)
 [![Downloads](https://pepy.tech/badge/mizu/month)](https://pepy.tech/project/mizu)
