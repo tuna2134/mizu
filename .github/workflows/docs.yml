@@ -2,7 +2,7 @@ name: Build document
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "develop"]
     paths:
       - docs/**
 
@@ -27,11 +27,11 @@ jobs:
         run: |
           source venv/bin/activate
           cd docs
-          make html
+          python3 -OO build.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./docs/build/html
+          path: ./docs
   deploy:
     environment:
       name: github-pages
