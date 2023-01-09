@@ -7,6 +7,7 @@ use pulldown_cmark::{html, Options, Parser};
 ///
 /// Args:
 ///     options (Options): Options for parser.
+///     loop (AbstractEventLoop): Event loop
 #[pyclass]
 #[pyo3(text_signature = "(options, loop/)")]
 pub struct Mizu {
@@ -22,10 +23,7 @@ impl Mizu {
         #[pyo3(from_py_with = "get_options")] options: Options,
         loop_: Option<PyObject>,
     ) -> Self {
-        Mizu {
-            options: options,
-            loop_: loop_,
-        }
+        Mizu { options, loop_ }
     }
 
     /// Parse markdown text to html.
@@ -49,7 +47,7 @@ impl Mizu {
             ));
         }
         let future = create_future(py, self.loop_.clone().unwrap())?;
-        let options = self.options.clone();
+        let options = self.options;
         let fut_clone = future.clone_ref(py);
         let loop_ = self.loop_.clone().unwrap();
         std::thread::spawn(move || {
