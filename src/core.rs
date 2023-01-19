@@ -40,6 +40,10 @@ impl Mizu {
         Ok(output)
     }
 
+    /// Parse markdown text to html (async version)
+    /// 
+    /// Args:
+    ///     text (str): Markdown text
     fn aioparse(&self, py: Python, text: String) -> PyResult<PyObject> {
         if self.loop_.is_none() {
             return Err(pyo3::exceptions::PyValueError::new_err(
