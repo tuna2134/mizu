@@ -7,7 +7,7 @@ import asyncio
 
 class Mizu:
     def __init__(
-        self, options: Options = Options(), loop_ = asyncio.AbstractEventLoop
+        self, options: Options = Options(), loop_: Optional[asyncio.AbstractEventLoop] = None
     ) -> None:
         ...
 
