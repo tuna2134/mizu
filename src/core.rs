@@ -7,7 +7,6 @@ use pulldown_cmark::{html, Options, Parser};
 ///
 /// Args:
 ///     options (Options): Options for parser.
-///     loop (AbstractEventLoop): Event loop
 #[pyclass]
 #[pyo3(text_signature = "(options, loop/)")]
 pub struct Mizu {
@@ -18,20 +17,26 @@ pub struct Mizu {
 #[pymethods]
 impl Mizu {
     #[new]
-    #[args(options = "Options::empty()")]
+    #[pyo3(signature = (options = Options::empty()))]
     pub fn new(
         #[pyo3(from_py_with = "get_options")] options: Options,
-        loop_: Option<PyObject>,
     ) -> Self {
-        Mizu { options, loop_ }
+        Mizu {
+            options,
+            loop_: None,
+        }
+    }
+
+    fn set_loop(&mut self, loop_: PyObject) -> PyResult<()> {
+        self.loop_ = Some(loop_);
+        Ok(())
     }
 
     /// Parse markdown text to html.
     ///
     /// Args:
     ///     text (str): Markdown text.
-    #[args(text)]
-    #[pyo3(text_signature = "(text, /)")]
+    #[pyo3(text_signature = "(text, /)", signature = (text))]
     fn parse(&self, text: &str) -> PyResult<String> {
         let parser: Parser = Parser::new_ext(text, self.options);
 

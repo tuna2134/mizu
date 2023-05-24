@@ -7,8 +7,11 @@ import asyncio
 
 class Mizu:
     def __init__(
-        self, options: Options = Options(), loop_: Optional[asyncio.AbstractEventLoop] = None
+        self, options: Options = Options()
     ) -> None:
+        ...
+    
+    def set_loop(self, loop: asyncio.AbstractEventLoop) -> None:
         ...
 
     def parse(self, text: str) -> str:
