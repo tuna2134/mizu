@@ -29,7 +29,7 @@ jobs:
           cd docs
           python3 -OO build.py
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs
   deploy:
