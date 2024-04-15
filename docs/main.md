@@ -56,12 +56,19 @@ This function is parse markdown to html.
 
 **PARAMETERS:**
 text (`str`) – Markdown content.
+
 tables (`Optional[bool]`) – Enable tables.
-footnotes (`Optional[bool]`) – Enable footnotes.
+
+footnotes (`Optional[bool]`) – Enable footnotes
+.
 strikethrough (`Optional[bool]`) – Enable strikethrough.
+
 tasklists (`Optional[bool]`) – Enable tasklists.
+
 smart_punctuation (`Optional[bool]`) – Enable smart_punctuation.
+
 heading_attribute (`Optional[bool]`) – Enable heading_attribute.
+
 
 **RETURNS:**
 Html content.
