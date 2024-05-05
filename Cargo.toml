@@ -10,5 +10,5 @@ name = "mizu"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.20.0", features = ["extension-module"] }
+pyo3 = { version = "0.21.0", features = ["extension-module"] }
 pulldown-cmark = "0.10.3"
