@@ -8,7 +8,6 @@ use pulldown_cmark::{html, Options, Parser};
 /// Args:
 ///     options (Options): Options for parser.
 #[pyclass]
-#[pyo3(text_signature = "(options, loop/)")]
 pub struct Mizu {
     options: Options,
     loop_: Option<PyObject>,
@@ -36,7 +35,7 @@ impl Mizu {
     ///
     /// Args:
     ///     text (str): Markdown text.
-    #[pyo3(text_signature = "(text, /)", signature = (text))]
+    #[pyo3(signature = (text))]
     fn parse(&self, text: &str) -> PyResult<String> {
         let parser: Parser = Parser::new_ext(text, self.options);
 
@@ -49,6 +48,7 @@ impl Mizu {
     /// 
     /// Args:
     ///     text (str): Markdown text
+    #[pyo3(signature = (text))]
     fn aioparse(&self, py: Python, text: String) -> PyResult<PyObject> {
         if self.loop_.is_none() {
             return Err(pyo3::exceptions::PyValueError::new_err(
@@ -71,7 +71,7 @@ impl Mizu {
     }
 }
 
-fn get_options(ob: &PyAny) -> PyResult<Options> {
+fn get_options(ob: &Bound<'_, PyAny>) -> PyResult<Options> {
     let mut options: Options = Options::empty();
     if ob.getattr("tables")?.extract::<bool>()? {
         options.insert(Options::ENABLE_TABLES);
