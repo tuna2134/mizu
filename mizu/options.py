@@ -1,5 +1,6 @@
 # Mizu's markdown options
 
+
 class Options:
     """Options for Markdown parsing.
 
@@ -11,17 +12,23 @@ class Options:
         smart_punctuation (bool): Enable smart punctuation parsing.
         heading_attribute (bool): Enable heading attribute parsing.
     """
+
     tables: bool
     footnotes: bool
     strikethrough: bool
     tasklists: bool
     smart_punctuation: bool
     heading_attribute: bool
-    
+
     def __init__(
-        self, *, tables: bool = False, footnotes: bool = False,
-        strikethrough: bool = False, tasklists: bool = False,
-        smart_punctuation: bool = False, heading_attribute: bool = False
+        self,
+        *,
+        tables: bool = False,
+        footnotes: bool = False,
+        strikethrough: bool = False,
+        tasklists: bool = False,
+        smart_punctuation: bool = False,
+        heading_attribute: bool = False,
     ) -> None:
         self.tables = tables
         self.footnotes = footnotes
@@ -34,6 +41,10 @@ class Options:
     def all(cls) -> "Options":
         """Returns an Options object with all options enabled."""
         return cls(
-            tables=True, footnotes=True, strikethrough=True,
-            tasklists=True, smart_punctuation=True, heading_attribute=True
+            tables=True,
+            footnotes=True,
+            strikethrough=True,
+            tasklists=True,
+            smart_punctuation=True,
+            heading_attribute=True,
         )

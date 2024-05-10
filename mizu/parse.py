@@ -12,18 +12,20 @@ class Mizu:
         options (Options): Options for parser.
         loop (AbstractEventLoop): Event loop
     """
+
     def __init__(
-        self, options: Options = Options(),
+        self,
+        options: Options = Options(),
         loop: Optional[AbstractEventLoop] = None,
     ) -> None:
         self.__parser = _Mizu(options)
         if loop:
             self.__parser.set_loop(loop)
-    
+
     def parse(self, text: str) -> str:
         """
         Parse markdown text to html.
-        
+
         Args:
             text (str): Markdown text.
         """
@@ -32,7 +34,7 @@ class Mizu:
     async def aioparse(self, text: str) -> str:
         """
         Parse markdown text to html (async version)
-        
+
         Args:
             text (str): Markdown text
         """
