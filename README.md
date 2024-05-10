@@ -27,6 +27,7 @@ These performance test codes are in tests.
 
 - 3.10: `26ms`
 - 3.11: `0.32ms`
+- 3.12: `0.002ms`
 
 ## Example
 
