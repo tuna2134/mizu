@@ -11,4 +11,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 pyo3 = { version = "0.21.2", features = ["extension-module"] }
-pulldown-cmark = "0.12.0"
+pulldown-cmark = "0.13.0"
